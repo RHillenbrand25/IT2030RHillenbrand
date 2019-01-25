@@ -13,8 +13,8 @@ namespace Lab2.Controllers
         {
             return "Product/Index is displayed.Index()";
         }
-		// GET: /Products/Browse
-		public string Browse(string genre) 
+		// GET: /Product/Browse and /Product/Browse?genre=Disco
+		public string Browse(string genre) //string genre
 		{
 			string message =
 				HttpUtility.HtmlEncode("Product.Browse, Genre = " + genre);
@@ -23,17 +23,17 @@ namespace Lab2.Controllers
 			// return "Browse displayed.Browse()";
 
 		}
-		// GET: /Products/Details/105
-		public string Details() //int id
+		// GET: /Product/Details/105
+		public string Details(int id) //int id
 		{
-			//string message = "Product.Details, ID = " + id;
+			string message = "Product.Details, ID = " + id;
 
-			//return message;
+			return message;
 
-			return "Details displayed for Id=105.Details()";
+			// return "Details displayed for Id=105.Details()";
 
 		}
-		// GET: /Products/Location?zip=44124
+		// GET: /Product/Location?zip=44124
 		public string Location()
 		{
 			return "Location displayed for zip=44124.Location()";
