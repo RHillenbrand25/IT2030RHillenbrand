@@ -13,5 +13,9 @@ namespace EnrollmentApplication2.Models
 		public virtual string Grade { get; set; }
 		public virtual Student StudentObject { get; set; }
 		public virtual Course CourseObject { get; set; }
+		public virtual bool IsActive { get; set; }
+		public virtual string AssignedCampus { get; set; }
+		public virtual string EnrollmentSemester { get; set; }
+		public virtual int EnrollmentYear { get; set; }
 	}
 }

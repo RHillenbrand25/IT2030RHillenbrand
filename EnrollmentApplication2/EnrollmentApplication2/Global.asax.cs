@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using System.Data.Entity;
+using EnrollmentApplication2.Models;
+
 namespace EnrollmentApplication2
 {
     public class MvcApplication : System.Web.HttpApplication
@@ -16,6 +19,10 @@ namespace EnrollmentApplication2
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-        }
+
+			Database.SetInitializer<Enrollment2DB>(new DropCreateDatabaseIfModelChanges<Enrollment2DB>());
+			
+			// Close connection to databse if error occurs.
+		}
     }
 }
