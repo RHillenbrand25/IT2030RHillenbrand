@@ -20,7 +20,7 @@ namespace EnrollmentApplication2
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-			Database.SetInitializer<Enrollment2DB>(new DropCreateDatabaseIfModelChanges<Enrollment2DB>());
+			//Database.SetInitializer<Enrollment2DB>(new DropCreateDatabaseIfModelChanges<Enrollment2DB>());
 			
 			// Close connection to databse if error occurs.
 		}
