@@ -14,8 +14,8 @@ namespace EnrollmentApplication2.Controllers
     {
         private Enrollment2DB db = new Enrollment2DB();
 
-        // GET: Course
-        public ActionResult Index()
+		// GET: Course
+		public ActionResult Index()
         {
             return View(db.Courses.ToList());
         }

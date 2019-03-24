@@ -14,15 +14,48 @@ namespace EnrollmentApplication2.Controllers
     {
         private Enrollment2DB db = new Enrollment2DB();
 
-        // GET: Enrollment2
-        public ActionResult Index()
+		// Start Lab 9
+		// Student Search
+		public ActionResult StudentSearch(string q)
+		{
+			var students = GetStudents(q);
+			return PartialView("_StudentSearch", students);
+		}
+
+		private List<Student> GetStudents(string searchString)
+		{
+			return db.Students
+				.Where(a => a.FirstName.Contains(searchString))
+				.Where(b => b.LastName.Contains(searchString))
+				.ToList();
+		}
+
+		// Course Search
+		public ActionResult CourseSearch(string q)
+		{
+			var courses = GetCourses(q);
+			return PartialView("_CourseSearch", courses);
+		}
+
+		private List<Course> GetCourses(string searchString)
+		{
+			return db.Courses
+				.Where(a => a.Title.Contains(searchString))
+				.Where(b => b.Description.Contains(searchString))
+				.ToList();
+		}
+		// End Lab 9
+
+		// GET: Enrollment2
+		public ActionResult Index()
         {
             var enrollments = db.Enrollments.Include(e => e.StudentObject);
-            return View(enrollments.ToList());
-        }
+			return View(enrollments.ToList());
+			//after (enrollments) -> .ToList()
+		}
 
-        // GET: Enrollment2/Details/5
-        public ActionResult Details(int? id)
+		// GET: Enrollment2/Details/5
+		public ActionResult Details(int? id)
         {
             if (id == null)
             {

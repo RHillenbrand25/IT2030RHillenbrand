@@ -30,8 +30,9 @@ namespace EnrollmentApplication2.Models
 		//[StringLength(160, MinimumLength = 2018)]
 		public virtual int EnrollmentYear { get; set; }
 
-		[Required]
-		[InvalidChars("*", ErrorMessage = "Notes contains unacceptable characters!")]
-		public virtual string Notes { get; set; }
+		//[Required]
+		// Uncomment below
+		//[InvalidChars("*", ErrorMessage = "Notes contains unacceptable characters!")]
+		//public virtual string Notes { get; set; }
 	}
 }
