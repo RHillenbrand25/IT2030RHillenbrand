@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVCMusicStore.Models.Genre>
+
+@{
+	ViewBag.Title = "Browse";
+}
+
+<h2>Browse</h2>
+
+<div id="header">
+	<h1>
+		ASP.NET MVC MUSIC STORE
+	</h1>
+	<ul id="navlist">
+		<li class="first"><a href="/" id="current">Home</a></li>
+		<li><a href="/Store/">Store</a></li>
+	</ul>
+</div>
+
+<div>
+	<p>Content Body</p>
+	<h2>Browse by Genre</h2>
+</div>
+
+<ul>
+	@foreach (var genre in Model)
+	{
+	<li><a href="/Store/Browse?genre=@genre.Name">@genre.Name</a>
+	@Html.ActionLink(" Link", "Index", "Store", null, null)</li>
+	}
+</ul>
