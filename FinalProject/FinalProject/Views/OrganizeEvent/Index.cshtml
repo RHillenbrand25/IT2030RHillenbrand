@@ -1,0 +1,52 @@
+﻿@model FinalProject.Models.OrganizeEvent
+
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Organize an Event</h2>
+<p>Event</p>
+<hr />
+
+<p>Event Type</p>
+<div class="col-md-10">
+	<!-- Html.DropDownList("Id", String.Empty)
+	 Html.ValidationMessageFor(model => model.Id) -->
+</div>
+
+<p>Title</p>
+<input id="Title" type="text" />
+
+<p>Description</p>
+<input id="Description" type="text" />
+
+<p>Start Date</p>
+<input id="StartDate" placeholder="e.g. 12/24/2020 9:30:00" type="text" />
+
+<p>End Date</p>
+<input id="EndDate" placeholder="e.g. 12/25/2020 12:30:00" type="text" />
+
+<p>Max Tickets</p>
+<input id="MaxTickets" type="text" />
+
+<p>Available Tickets</p>
+<input id="AvailableTickets" type="text" />
+
+<p>Organizer</p>
+<input id="Organizer" type="text" />
+
+<p>Organizer Contact Info</p>
+<input id="OrganizerContactInfo" type="text" />
+
+<p>City</p>
+<input id="City" type="text" />
+
+<p>State</p>
+<input id="State" type="text" />
+
+<input id="Create" type="button" value="Create" />
+
+<a href="/Home/Index"><input id="Home" type="button" value="Back to Home" /></a>
+
+<a href="/Home/Index"><input id="NewEvent" type="button" value="Create a new Event Type" /></a>
+
